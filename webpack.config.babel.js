@@ -1,6 +1,5 @@
 import makeRule from './src/'
 import { resolve } from 'path'
-import { optimize } from 'webpack'
 
 export default {
   entry: resolve(__dirname, './src/index.js'),
@@ -15,11 +14,6 @@ export default {
     ]
   },
   target: 'node',
-  plugins: [
-    new optimize.UglifyJsPlugin({
-      comments: false
-    })
-  ],
   stats: {
     chunks: true,
     colors: true,
