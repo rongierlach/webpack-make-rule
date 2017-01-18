@@ -4,7 +4,6 @@ const isString = value =>
 const isArray = value =>
   Array.isArray(value)
 
-// https://webpack.js.org/configuration/module/#condition
 const normalizeTest = ext => {
   if (!ext) throw new TypeError('You must pass an extension as an argument to makeRule')
   return isString(ext) ? RegExp(`/.${ext}$/`) : ext
