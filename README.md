@@ -3,7 +3,7 @@
 Intended to support your basic use cases.  
 A simple little helper function for building [rule](https://webpack.js.org/configuration/module/#rule) config objects in [Webpack 2](https://webpack.js.org/).  
 
-[![Dependency Status](https://david-dm.org/rongierlach/webpack-make-rule.svg)](https://david-dm.org/rongierlach/webpack-make-rule) [![devDependency Status](https://david-dm.org/rongierlach/webpack-make-rule/dev-status.svg)](https://david-dm.org/rongierlach/webpack-make-rule#info=devDependencies)
+[![Build Status](https://travis-ci.org/rongierlach/webpack-make-rule.svg?branch=master)](https://travis-ci.org/rongierlach/webpack-make-rule)[![Dependency Status](https://david-dm.org/rongierlach/webpack-make-rule.svg)](https://david-dm.org/rongierlach/webpack-make-rule) [![devDependency Status](https://david-dm.org/rongierlach/webpack-make-rule/dev-status.svg)](https://david-dm.org/rongierlach/webpack-make-rule#info=devDependencies)
 
 ## Installation
 
