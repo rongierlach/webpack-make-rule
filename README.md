@@ -1,13 +1,13 @@
 # Webpack Make Rule 👑
 
-Intended to support your basic use cases,  
-a simple little helper function for building [rule](https://webpack.js.org/configuration/module/#rule) config objects in [Webpack 2](https://webpack.js.org/).  
+Intended to support your basic use cases.  
+A simple little helper function for building [rule](https://webpack.js.org/configuration/module/#rule) config objects in [Webpack 2](https://webpack.js.org/).  
 
 ## Installation
 
 `$ npm install --save-dev webpack-make-rule`  
 
-Or if `yarn` is more your fancy...  
+Or if [yarn](https://yarnpkg.com/) is more your fancy...  
 `$ yarn add --dev webpack-make-rule`
 
 ## Usage
