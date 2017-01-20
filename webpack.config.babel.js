@@ -5,7 +5,9 @@ export default {
   entry: resolve(__dirname, './src/index.js'),
   output: {
     path: resolve(__dirname, './lib'),
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 'ReactReduxConnectHelpers',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
