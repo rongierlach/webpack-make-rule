@@ -6,7 +6,7 @@ export default {
   output: {
     path: resolve(__dirname, './lib'),
     filename: 'index.js',
-    library: 'ReactReduxConnectHelpers',
+    library: 'WebpackMakeRule',
     libraryTarget: 'umd'
   },
   module: {
