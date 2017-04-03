@@ -32,7 +32,7 @@ export default (ext, loader, enforce, exclude, include) => ({
   enforce:
     enforce || undefined,
   exclude:
-    exclude || /node_modules/,
+    exclude || /(node_modules|bower_components)/,
   include:
     include || undefined
 })
