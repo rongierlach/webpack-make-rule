@@ -8,7 +8,7 @@ const isObject = value =>
   typeof value === 'object'
 
 const normalizeTest = ext => {
-  if (!ext) throw new TypeError('You must pass an extension as an argument to makeRule')
+  if (!ext) throw new TypeError('The extension argument may not be null or undefined')
   return isString(ext) ? RegExp(`/.${ext}$/`) : ext
 }
 
