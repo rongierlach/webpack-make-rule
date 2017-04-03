@@ -12,9 +12,6 @@ const normalizeTest = ext => {
   return isString(ext) ? RegExp(`/.${ext}$/`) : ext
 }
 
-const normalizeLoader = (loader, ext) => {
-  if (isArray(loader)) return loader
-  if (isString(loader)) return [ loader ]
 const stringToLoader = (loader, options) =>
   ({ loader, options })
 
@@ -30,6 +27,12 @@ const arrayToEntry = (loaders, options) =>
     throw new TypeError('When passing an array of loaders, each loader must be a string or an object')
   })
 
+const normalizeLoader = (loader, ext, options) => {
+  if (options && isObject(options) && !loader) {
+    throw new TypeError('When passing an options argument, the loader argument may not be null or undefined')
+  }
+  if (isArray(loader)) return arrayToEntry(loader, options)
+  if (isString(loader)) return [ stringToLoader(loader, options) ]
   return [ loader || `${ext}-loader` ]
 }
 
@@ -47,9 +50,7 @@ export default (ext, loader, options, enforce, exclude, include) => ({
   test:
     normalizeTest(ext),
   use:
-    normalizeLoader(loader, ext),
-  options:
-    options || undefined,
+    normalizeLoader(loader, ext, options),
   enforce:
     enforce || undefined,
   exclude:
