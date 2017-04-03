@@ -7,10 +7,7 @@ A simple little helper function for building [rule](https://webpack.js.org/confi
 
 ## Installation
 
-`$ npm install --save-dev webpack-make-rule`  
-
-Or if [yarn](https://yarnpkg.com/) is more your fancy...  
-`$ yarn add --dev webpack-make-rule`
+`$ npm install --save-dev webpack-make-rule`
 
 ## Usage
 
@@ -22,9 +19,9 @@ import makeRule from 'webpack-make-rule'
 /* Having installed all of:
  * - json-loader
  * - babel-loader
- * - standard-loader
  * - web3-loader
  * - solc-loader
+ * - standard-loader
  */
 
 export default {
@@ -37,8 +34,8 @@ export default {
     rules: [
       makeRule('json'),
       makeRule(/\.jsx?$/, 'babel-loader'),
-      makeRule(/\.jsx?$/, {'loader': 'standard-loader'}, 'pre'),
-      makeRule(/\.sol$/, ['web3', 'solc'], undefined, /node_modules/)
+      makeRule(/\.sol$/, ['web3', 'solc']),
+      makeRule(/\.jsx?$/, {'loader': 'standard-loader'}, {'snazzy': true}, 'pre')
     ]
   }
 }
@@ -55,7 +52,8 @@ Returns a Webpack rule configuration object
 **Parameters**
 
 -   `ext` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))**
--   `loader` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>)**
+-   `loader` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>)**  
+-   `options` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
 -   `enforce` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 -   `exclude` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>)**
 -   `include` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>)**
