@@ -18,6 +18,11 @@ const normalizeLoader = (loader, ext) => {
 const stringToLoader = (loader, options) =>
   ({ loader, options })
 
+const objectToLoader = (loader, _options) => {
+  const options = Object.assign({}, loader.options, _options)
+  return Object.assign({}, loader, {options})
+}
+
   return [ loader || `${ext}-loader` ]
 }
 
