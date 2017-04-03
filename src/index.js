@@ -20,15 +20,18 @@ const normalizeLoader = (loader, ext) => {
  * @desc Returns a Webpack rule configuration object
  * @param {string|object} ext
  * @param {string|object|Array.<string|object>} loader
+ * @param {object} options
  * @param {string} enforce
  * @param {string|object|Array.<string|object>} exclude
  * @param {string|object|Array.<string|object>} include
  */
-export default (ext, loader, enforce, exclude, include) => ({
+export default (ext, loader, options, enforce, exclude, include) => ({
   test:
     normalizeTest(ext),
   use:
     normalizeLoader(loader, ext),
+  options:
+    options || undefined,
   enforce:
     enforce || undefined,
   exclude:
