@@ -15,6 +15,9 @@ const normalizeTest = ext => {
 const normalizeLoader = (loader, ext) => {
   if (isArray(loader)) return loader
   if (isString(loader)) return [ loader ]
+const stringToLoader = (loader, options) =>
+  ({ loader, options })
+
   return [ loader || `${ext}-loader` ]
 }
 
