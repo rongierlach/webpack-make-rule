@@ -23,6 +23,13 @@ const objectToLoader = (loader, _options) => {
   return Object.assign({}, loader, {options})
 }
 
+const arrayToEntry = (loaders, options) =>
+  loaders.map(loader => {
+    if (isString(loader)) return stringToLoader(loader, options)
+    if (isObject(loader)) return objectToLoader(loader, options)
+    throw new TypeError('When passing an array of loaders, each loader must be a string or an object')
+  })
+
   return [ loader || `${ext}-loader` ]
 }
 
