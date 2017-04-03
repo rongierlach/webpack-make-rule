@@ -11,7 +11,7 @@ export default {
   },
   module: {
     rules: [
-      makeRule(/\.jsx?$/, 'standard-loader', 'pre'),
+      makeRule(/\.jsx?$/, 'standard-loader', {snazzy: true}, 'pre'),
       makeRule(/\.jsx?$/, 'babel-loader')
     ]
   },
